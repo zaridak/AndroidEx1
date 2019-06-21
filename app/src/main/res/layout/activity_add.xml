@@ -50,7 +50,7 @@
         android:layout_marginTop="24dp"
         android:ems="10"
         android:hint="Κινητό"
-        android:inputType="phone"
+        android:inputType="textPersonName"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/email" />
 

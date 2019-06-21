@@ -1,21 +1,6 @@
 package com.example.ask1;
 
-import android.content.Intent;
-import android.widget.EditText;
-import android.widget.Toast;
-import android.location.LocationManager;
 import android.database.sqlite.SQLiteDatabase;
-import android.database.Cursor;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentActivity;
-
-import android.os.Bundle;
-import android.view.View;
-import android.app.Fragment;
-
-import static android.content.Context.MODE_PRIVATE;
-import static android.database.sqlite.SQLiteDatabase.openOrCreateDatabase;
-import static androidx.core.content.ContextCompat.getSystemService;
 
 public class Contact  {
 
@@ -25,13 +10,12 @@ public class Contact  {
     private String address;
 
 
-    //private static SQLiteDatabase db;
-
     public Contact(String username,String email, String telephone,String address){
         this.telephone = telephone;
         this.username = username;
         this.address=address;
         this.email = email;
+        //System.out.println("Contact Created "+this.username+" "+this.email+" "+ this.address+" "+this.telephone);
     }
 
     public String getEmail(){
@@ -66,7 +50,7 @@ public class Contact  {
         this.telephone = telephone;
     }
 
-    public boolean addInDB(SQLiteDatabase db){
+    protected boolean addInDB(SQLiteDatabase db){
 
         try{
             db.execSQL("CREATE TABLE IF NOT EXISTS 'Contacts' ("+
@@ -85,10 +69,10 @@ public class Contact  {
         }
         db.close();
         return true;
+    }
 
-
-
-
+    public String toString(){
+        return this.username+" "+this.email+" "+this.telephone+" "+this.address;
     }
 
 }
