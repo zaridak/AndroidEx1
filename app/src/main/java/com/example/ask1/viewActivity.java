@@ -37,6 +37,9 @@ git push
         }
     }
 
+    myAdapter myAdapter;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,10 +49,15 @@ git push
         db = openOrCreateDatabase("Ask1DB",MODE_PRIVATE,null);
         getContactsFromDB(db);
 
-        findViewById(R.id.viewList);
+//        findViewById(R.id.viewList);
+        ListView  listView =(ListView) findViewById(R.id.viewList);
+
+        myAdapter = new myAdapter(this,myCons);
+
+        listView.setAdapter(myAdapter);
 
         //fix this dynamically SAVVATO
-        if(!myCons.isEmpty()){
+      /*  if(!myCons.isEmpty()){
 
             //add all vector to values
             //{myCons.elementAt(0).getUsername(),myCons.elementAt(0).getEmail()};
@@ -66,11 +74,12 @@ git push
             //print by 4 group
             ListView  listView =(ListView) findViewById(R.id.viewList);
             ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, android.R.id.text1, values);
+
             listView.setAdapter(adapter);
            // Toast.makeText(this,myCons.size(),Toast.LENGTH_SHORT).show();
         }else{
             Toast.makeText(this,"No contacts found",Toast.LENGTH_SHORT).show();
-        }
+        }*/
 
 
     }

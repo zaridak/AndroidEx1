@@ -53,4 +53,6 @@ public class addActivity extends AppCompatActivity {
             Toast.makeText(this,"Oops something went wrong. Buy an iPhone",Toast.LENGTH_SHORT).show();
 
     }
+
+
 }
