@@ -18,8 +18,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-      /*  locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
-        db = openOrCreateDatabase("Ask1DB",MODE_PRIVATE,null);
+
+      /*  db = openOrCreateDatabase("Ask1DB",MODE_PRIVATE,null);
         db.execSQL("CREATE TABLE IF NOT EXISTS 'userPass' (" +
                 "'pass' TEXT," +
                 "PRIMARY KEY('pass'))");

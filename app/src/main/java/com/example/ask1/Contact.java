@@ -8,8 +8,10 @@ public class Contact  {
     private String email;
     private String telephone;
     private String address;
+    private int id;
 
     public Contact(String username,String email, String telephone,String address){
+
         this.telephone = telephone;
         this.username = username;
         this.address=address;

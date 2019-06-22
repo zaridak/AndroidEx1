@@ -48,19 +48,30 @@ git push
 
         findViewById(R.id.viewList);
 
-        for(Contact tmp : myCons)
-            System.out.println(tmp.toString());
-
         //fix this dynamically SAVVATO
         if(!myCons.isEmpty()){
-            String[] values = new String[]{myCons.elementAt(0).getUsername(),myCons.elementAt(0).getEmail()};
+
+            //add all vector to values
+            //{myCons.elementAt(0).getUsername(),myCons.elementAt(0).getEmail()};
+            int size = myCons.size()*4;
+            String[] values = new String[myCons.size()];
+            int i=0;
+            for(Contact tmp :myCons){
+                values[i++] = "Όνομα: "+tmp.getUsername()+"\n"+"Email: "+tmp.getEmail()+"\n"+"Τηλέφωνο: "+tmp.getTelephone()+"\n"+"Διεύθυνση: "+tmp.getAddress()+"\n";
+            }
+
+            for(int j =0;j<values.length;j++)
+                System.out.println(values[j]);
+
+            //print by 4 group
             ListView  listView =(ListView) findViewById(R.id.viewList);
-            ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                    android.R.layout.simple_list_item_1, android.R.id.text1, values);
+            ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, android.R.id.text1, values);
             listView.setAdapter(adapter);
+           // Toast.makeText(this,myCons.size(),Toast.LENGTH_SHORT).show();
         }else{
             Toast.makeText(this,"No contacts found",Toast.LENGTH_SHORT).show();
         }
+
 
     }
 }
