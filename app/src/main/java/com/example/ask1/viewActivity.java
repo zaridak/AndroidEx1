@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
+
 import java.util.Vector;
 
 public class viewActivity extends AppCompatActivity {
@@ -13,7 +15,6 @@ git add .
 git commit -m "fefefe"
 git push
 */
-
     SQLiteDatabase db;
 /*
 *                   'address' TEXT,"+  2
@@ -51,12 +52,15 @@ git push
             System.out.println(tmp.toString());
 
         //fix this dynamically SAVVATO
-        String[] values = new String[]{myCons.elementAt(0).getUsername(),myCons.elementAt(0).getEmail()};
-
-        ListView  listView =(ListView) findViewById(R.id.viewList);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_list_item_1, android.R.id.text1, values);
-        listView.setAdapter(adapter);
+        if(!myCons.isEmpty()){
+            String[] values = new String[]{myCons.elementAt(0).getUsername(),myCons.elementAt(0).getEmail()};
+            ListView  listView =(ListView) findViewById(R.id.viewList);
+            ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+                    android.R.layout.simple_list_item_1, android.R.id.text1, values);
+            listView.setAdapter(adapter);
+        }else{
+            Toast.makeText(this,"No contacts found",Toast.LENGTH_SHORT).show();
+        }
 
     }
 }

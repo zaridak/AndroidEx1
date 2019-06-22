@@ -9,7 +9,6 @@ public class Contact  {
     private String telephone;
     private String address;
 
-
     public Contact(String username,String email, String telephone,String address){
         this.telephone = telephone;
         this.username = username;
@@ -74,5 +73,4 @@ public class Contact  {
     public String toString(){
         return this.username+" "+this.email+" "+this.telephone+" "+this.address;
     }
-
 }
