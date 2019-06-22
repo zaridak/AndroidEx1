@@ -27,6 +27,13 @@ public class startScreen extends AppCompatActivity {
         startActivity(intent);
     }
 
+
+    public void remove(View view) {
+        Intent intent = new Intent(this, removeActivity.class);
+        startActivity(intent);
+    }
+
+
     public void delete(View view) {
 
         SQLiteDatabase db;

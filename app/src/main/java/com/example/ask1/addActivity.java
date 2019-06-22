@@ -51,8 +51,23 @@ public class addActivity extends AppCompatActivity {
 
         else
             Toast.makeText(this,"Oops something went wrong. Buy an iPhone",Toast.LENGTH_SHORT).show();
-
     }
 
+    public void deleteByMail(String mail){
+        System.out.println("pira to mail "+mail);
+        try{
+            //SQLiteDatabase db = new SQLiteDatabase()
+            db= openOrCreateDatabase("Ask1DB",MODE_PRIVATE,null);
+                db.execSQL("DELETE FROM 'Contacts' WHERE email="+
+                        "'"+mail+"';");
+            db.close();
+//            Intent intent = new Intent(this, startScreen.class);
+//            startActivity(intent);
+        }catch (Exception ex){
+            System.err.println(ex.getMessage());
+         //   Toast.makeText(this,"Delete failed",Toast.LENGTH_SHORT).show();
+        }
+
+    }
 
 }

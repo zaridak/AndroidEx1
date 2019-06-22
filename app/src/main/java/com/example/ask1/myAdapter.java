@@ -1,9 +1,13 @@
 package com.example.ask1;
 
 import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.widget.ArrayAdapter;
 import android.view.View;
+import android.app.Fragment;
+import android.content.Intent;
 
 import java.util.Vector;
 
@@ -12,10 +16,17 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class myAdapter extends ArrayAdapter<Contact> {
+import androidx.appcompat.app.AppCompatActivity;
+
+import static android.content.Context.MODE_PRIVATE;
+import static android.database.sqlite.SQLiteDatabase.openOrCreateDatabase;
+import static androidx.core.content.ContextCompat.startActivity;
+
+public class myAdapter extends ArrayAdapter<Contact>  {
 
     private Context mContext;
     private Vector<Contact> contactsList = new Vector<>();
+    SQLiteDatabase db;
 
     public myAdapter(Context context, Vector<Contact> contacts) {
         super(context, 0, contacts);
@@ -45,18 +56,23 @@ public class myAdapter extends ArrayAdapter<Contact> {
         TextView address = (TextView) listItem.findViewById(R.id.textView_Add);
         address.setText("Address: "+con.getAddress());
 
-        TextView deleteBtn = (TextView) listItem.findViewById(R.id.dltConBtnitem);
+      /*  TextView deleteBtn = (TextView) listItem.findViewById(R.id.dltConBtnitem);
         deleteBtn.setText("Delete");
 
         Button btButton = (Button) listItem.findViewById(R.id.dltConBtnitem);
-        btButton.setOnClickListener(new View.OnClickListener() {
 
+        btButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 System.out.println("svinw to "+con.getEmail() );
 
+                /*db = openOrCreateDatabase("Ask1DB",null);
+                db.execSQL("DELETE FROM Contacts WHERE email="+
+                        "'"+con.getEmail()+"'");
+                addActivity go = new addActivity();
+                go.deleteByMail(con.getEmail());
             }
-        });
+        }); */
 
         return listItem;
     }

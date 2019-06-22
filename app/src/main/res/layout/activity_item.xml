@@ -53,17 +53,14 @@
         app:layout_constraintBaseline_toBaselineOf="@+id/textView_username"
          />
 
-    <Button
-        android:id="@+id/dltConBtnitem"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <!--<Button-->
+        <!--android:id="@+id/dltConBtnitem"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
 
-        android:layout_marginLeft="100dp"
-        android:layout_toEndOf="@+id/textView_username"
-        android:text="Delete" />
+        <!--android:layout_marginLeft="100dp"-->
+        <!--android:layout_toEndOf="@+id/textView_username"-->
+        <!--android:text="Delete" />-->
         <!--android:onClick="deleteByMail"-->
-
-
-
 
 </RelativeLayout>

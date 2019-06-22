@@ -3,6 +3,8 @@
     xmlns:dist="http://schemas.android.com/apk/distribution"
     package="com.example.ask1">
 
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <dist:module dist:instant="true" />
 
     <application
@@ -12,7 +14,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".deleteActivity"></activity>
+        <activity android:name=".removeActivity"></activity>
+        <activity android:name=".deleteActivity" />
         <activity android:name=".changePassActivity" />
         <activity android:name=".viewActivity" />
         <activity android:name=".addActivity" />

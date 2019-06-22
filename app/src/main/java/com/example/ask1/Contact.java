@@ -20,7 +20,7 @@ public class Contact  {
     }
 
     public String getEmail(){
-        System.out.println("EPISTREFW TO MAIL "+this.email);
+     //   System.out.println("EPISTREFW TO MAIL "+this.email);
         return this.email;
     }
 
