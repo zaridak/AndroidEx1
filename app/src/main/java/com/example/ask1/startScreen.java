@@ -42,4 +42,13 @@ public class startScreen extends AppCompatActivity {
         }
 
     }
+
+    public void changePass(View view){
+        Intent intent = new Intent(this, changePassActivity.class);
+        startActivity(intent);
+    }
+
+
+
+
 }
